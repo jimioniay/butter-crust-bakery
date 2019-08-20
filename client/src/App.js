@@ -26,6 +26,7 @@ function App() {
   };
 
   console.log(banks);
+  console.log(axios.baseURL);
 
   return (
     <div className="App">
