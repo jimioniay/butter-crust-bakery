@@ -1,13 +1,40 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: helveticaneuew01-55roma, sans-serif;
+  color: white;
+  font-size: 1em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.padding {
+  padding: 1.5em;
 }
+.header {
+  color: #20303c;
+  font-size: 40px;
+}
+
+.small-header {
+  color: #20303c;
+  font-size: 20px;
+}
+
+.base-img {
+  content: url('https://i.ibb.co/6v5tfkJ/computer-desk-keyboard-2343477.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0px;
+  padding: 0px;
+}
+
+#footer {
+  /* background: rgb(0, 4, 16); */
+  background: #2b2b52;
+  color: white;
+}
+
+#contact .fas,
+#contact .fab {
+  color: white;
+  font-size: 1em;
+}
+

@@ -27,7 +27,6 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('*', (req, res) => {
   console.log('We are routing you to the React app');
-  console.log(process.env);
 });
 
 const PORT = process.env.PORT || process.env.DEV_SERVER_PORT;
