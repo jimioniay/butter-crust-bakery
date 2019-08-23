@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
+const path = require('path');
 require('dotenv/config');
 
 app.use(cors());
@@ -24,10 +25,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
-app.get('*', (req, res) => {
-  console.log('We are routing you to the React app');
-});
 
 const PORT = process.env.PORT || process.env.DEV_SERVER_PORT;
 try {
