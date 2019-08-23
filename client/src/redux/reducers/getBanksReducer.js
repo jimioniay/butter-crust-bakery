@@ -11,7 +11,7 @@ const getBanksReducer = (state = initialState, action) => {
   switch (action.type) {
     case `${GET_BANKS}_START`:
       return {
-        ...state,
+        bankList: [],
         spinner: true,
       };
     case `${GET_BANKS}_SUCCESS`:

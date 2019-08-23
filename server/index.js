@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || process.env.DEV_SERVER_PORT;
 try {
-  app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
+  app.listen(PORT, () => console.log(`Server started on port: ${PORT} !!!`));
 } catch (error) {
   console.log('Error on start: ', error);
 }
