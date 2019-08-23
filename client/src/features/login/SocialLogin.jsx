@@ -6,7 +6,6 @@ import SocialButton from './SocialButton';
 
 class SocialLogin extends Component {
   handleSocialLogin = user => {
-    console.log(user);
     this.props.history.push('/transfer');
   };
 

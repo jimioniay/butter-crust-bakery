@@ -10,7 +10,7 @@ router.get('/getBanks', async (req, res) => {
     });
     res.json(response.data);
   } catch (error) {
-    console.log(error);
+  
     res.json(
       error.response.data === undefined
         ? error.response === undefined
@@ -75,7 +75,6 @@ router.post('/postTransaction', async (req, res) => {
       });
       res.json(response.data);
     } catch (error) {
-      console.log(error);
       res.json(
         error.response.data === undefined
           ? error.response
@@ -140,10 +139,8 @@ router.post('/postTransactionFinalize', async (req, res) => {
           otp: req.body.otp,
         },
       });
-      console.log(response);
       res.json(response.data);
     } catch (error) {
-      console.log(error);
       res.json(error.response.data);
     }
   }
