@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import './progress-bar.scss';
 
 const IndeterminateProgressBar = ({ spinner }) => {
-  console.log(spinner);
   if (spinner) {
     return (
       <div className="progress">

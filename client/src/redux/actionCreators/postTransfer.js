@@ -7,7 +7,6 @@ const postTransfer = ({
   receipient,
   OTP,
 }) => async dispatch => {
-  console.log('got here: ', description, amount, receipient, OTP);
   try {
     dispatch({
       type: `${POST_TRANX}_START`,
