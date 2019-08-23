@@ -11,11 +11,12 @@ const getBanksReducer = (state = initialState, action) => {
   switch (action.type) {
     case `${GET_BANKS}_START`:
       return {
-        bankList: [{}],
+        ...state,
         spinner: true,
       };
     case `${GET_BANKS}_SUCCESS`:
       return {
+        ...state,
         spinner: false,
         status: true,
         message: action.payload.message,

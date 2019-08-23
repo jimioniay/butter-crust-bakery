@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import getBanks from '../../../redux/actionCreators/getBanks';
@@ -71,3 +72,19 @@ export default connect(
     selectedBank,
   },
 )(BankList);
+
+BankList.defaultProps = {
+  getBanks: () => {},
+  spinner: false,
+  status: false,
+  bankList: [{}],
+  selectedBank: () => {},
+};
+
+BankList.propTypes = {
+  getBanks: PropTypes.func.isRequired,
+  spinner: PropTypes.bool,
+  status: PropTypes.bool,
+  bankList: PropTypes.any.isRequired,
+  selectedBank: PropTypes.func.isRequired,
+};
