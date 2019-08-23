@@ -7,6 +7,7 @@ import Spinner from '../../../components/spinner';
 import Option from './Option';
 
 const BankList = ({ getBanks, spinner, status, bankList, selectedBank }) => {
+  console.log(status, bankList);
   const [form, setForm] = useState({
     bank_code: '',
     bank_name: '',
