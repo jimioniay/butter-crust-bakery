@@ -1,0 +1,21 @@
+li > span {
+  width: 15%;
+  font-weight: 700;
+}
+li,
+label {
+  color: #20303c;
+  text-align: left !important;
+}
+
+.form-check-label {
+  font-size: 12px;
+}
+
+.confirm-response {
+  display: flex;
+}
+
+.confirm-response-content {
+  margin: auto;
+}
