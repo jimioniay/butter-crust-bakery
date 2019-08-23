@@ -23,7 +23,7 @@ class SocialLogin extends Component {
         <div className="google mb-4">
           <SocialButton
             provider="google"
-            appId="AIzaSyBP5ErvXZKQDEuME1xfjvkYR2VOVsBqV3A"
+            appId={process.env.GOOGLE_APP_ID}
             onLoginSuccess={this.handleSocialLogin}
             onLoginFailure={this.handleSocialLoginFailure}
             classnames="loginBtn loginBtn--google"
@@ -35,7 +35,7 @@ class SocialLogin extends Component {
         <div className="facebook">
           <SocialButton
             provider="facebook"
-            appId="2621833401215184"
+            appId={FACEBOOK_APP_ID}
             onLoginSuccess={this.handleSocialLogin}
             onLoginFailure={this.handleSocialLoginFailure}
             classnames="loginBtn loginBtn--facebook"
