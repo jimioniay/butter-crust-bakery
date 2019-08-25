@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SocialLogin from 'react-social-login';
 
-import Button from '../../components/button';
+import Button from '../../../components/button';
 
 class SocialButton extends Component {
   render() {

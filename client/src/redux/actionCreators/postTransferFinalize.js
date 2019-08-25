@@ -14,7 +14,6 @@ const postTransferFinalize = ({ otp, transfer_code }) => async dispatch => {
         transfer_code,
       },
     });
-    console.log(response);
     response.data.status
       ? dispatch({
           type: `${POST_TRANX_FINALIZE}_SUCCESS`,

@@ -14,6 +14,7 @@ const InputGroup = ({
   maxLength,
   amount,
   handleBlur,
+  name,
 }) => (
   <div className="input-group mb-3">
     <div className="input-group-prepend">
@@ -22,15 +23,14 @@ const InputGroup = ({
       </span>
     </div>
     <input
+      name={name}
       type={type}
       className="form-control"
       aria-label="Sizing example input"
       aria-describedby={id}
       onChange={handleChange}
       disabled={disabled}
-      value={amount ? amount : value}
-      maxLength={maxLength}
-      onBlur={handleBlur}
+      value={value}
     />
   </div>
 );
@@ -38,6 +38,7 @@ const InputGroup = ({
 export default InputGroup;
 
 InputGroup.defaultProps = {
+  name: '',
   label: '',
   type: 'text',
   handleChange: () => {},
@@ -50,6 +51,7 @@ InputGroup.defaultProps = {
 };
 
 InputGroup.propTypes = {
+  name: PropTypes.string,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,

@@ -4,7 +4,7 @@ const Footer = () => (
   <Fragment>
     <div id="footer" className="row padding text-center">
       <div className="col-sm-12 col-md-6 col-lg-4 padding line-height">
-        <h3 className="mb-4">ABOUT ME</h3>
+        <h3 className="mb-4">ABOUT US</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo suscipit
           a odio praesentium doloribus dignissimos consequatur quod, consectetur
@@ -39,8 +39,8 @@ const Footer = () => (
         </div>
       </div>
       <div className="col-sm-12 col-lg-4 padding line-height">
-        <h3 className="mb-4">FOLLOW ME</h3>
-        <p>Meet me on all social media networks. I am waiting...</p>
+        <h3 className="mb-4">FOLLOW US</h3>
+        <p>Meet us on all social media networks. We are waiting...</p>
         <div className="d-flex justify-content-around">
           <a href="http://linkedIn.com/aribisalaayodeji">
             <i className="fab fa-linkedin-in" />

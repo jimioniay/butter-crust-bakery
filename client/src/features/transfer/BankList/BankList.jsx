@@ -8,7 +8,6 @@ import Spinner from '../../../components/spinner';
 import Option from './Option';
 
 const BankList = ({ getBanks, spinner, status, bankList, selectedBank }) => {
-  console.log(status, bankList);
   const [form, setForm] = useState({
     bank_code: '',
     bank_name: '',
@@ -31,6 +30,12 @@ const BankList = ({ getBanks, spinner, status, bankList, selectedBank }) => {
       bank_name: e.target.value.split('|')[1],
     });
   };
+  let update = status
+    ? bankList.unshift({
+        name: 'Choose...',
+        code: '',
+      })
+    : bankList;
   return (
     <div className="input-group mb-3">
       <div className="input-group-prepend">

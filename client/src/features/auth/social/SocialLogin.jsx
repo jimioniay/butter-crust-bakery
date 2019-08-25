@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import Header from '../../components/header';
+
 import SocialButton from './SocialButton';
 
 class SocialLogin extends Component {
@@ -15,14 +15,10 @@ class SocialLogin extends Component {
   };
 
   render() {
-    console.log(
-      process.env.REACT_APP_FACEBOOK_APP_ID,
-      process.env.REACT_APP_GOOGLE_APP_ID,
-    );
     return (
       <div className="d-flex flex-column">
         <div className="mb-4">
-          <Header text="Login with Social" />
+          
         </div>
         <div className="google mb-4">
           <SocialButton

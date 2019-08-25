@@ -1,7 +1,7 @@
 import React from 'react';
 
 import BaseUI from '../base/BaseUI';
-import SocialLogin from '../login/SocialLogin';
+import SocialLogin from '../auth/social/SocialLogin';
 
 const Home = () => (
   <BaseUI>
