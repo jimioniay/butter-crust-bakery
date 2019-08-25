@@ -85,6 +85,7 @@ const ConfirmationDetails = ({
                   id="exampleCheck1"
                   onChange={handleChange}
                   checked={data.checked}
+                  disabled={postTransferStatus}
                 />
                 <label className="form-check-label" htmlFor="exampleCheck1">
                   {`By clicking this checkbox you confirm transaction to ${account_name}.`}
