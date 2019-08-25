@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Cancel from '../icons/Cancel';
 
-const DismissModal = ({ classNames }) => (
-  <div data-dismiss="modal" className={`dismiss-modal ${classNames}`} >
+const DismissModal = ({ classnames }) => (
+  <div data-dismiss="modal" className={`dismiss-modal ${classnames}`}>
     <Cancel />
   </div>
 );
@@ -12,9 +12,9 @@ const DismissModal = ({ classNames }) => (
 export default DismissModal;
 
 DismissModal.defaultProps = {
-  classNames: ''
+  classnames: '',
 };
 
 DismissModal.propTypes = {
-  classNames: PropTypes.string,
+  classnames: PropTypes.string,
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Header from '../../components/header';
@@ -40,3 +41,21 @@ export default connect(
   mapStateToProps,
   null,
 )(Confirmation);
+
+Confirmation.defaultProps = {
+  spinner: false,
+  preStatus: false,
+  preMessage: '',
+  finalSpinner: false,
+  status: false,
+  message: '',
+};
+
+Confirmation.defaultProps = {
+  spinner: PropTypes.bool,
+  preStatus: PropTypes.bool,
+  preMessage: PropTypes.string,
+  finalSpinner: PropTypes.bool,
+  status: PropTypes.bool,
+  message: PropTypes.string,
+};

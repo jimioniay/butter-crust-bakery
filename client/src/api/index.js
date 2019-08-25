@@ -1,4 +1,5 @@
 import axios from 'axios';
+import AuthServices from '../redux/util/authServices';
 
 const baseURL =
   process.env.NODE_ENV === 'production'
@@ -8,5 +9,8 @@ const baseURL =
 const instance = axios.create({
   baseURL,
 });
+
+let token = AuthServices.getToken();
+instance.defaults.headers.common.Authorization = `Bearer ${token}`;
 
 export default instance;

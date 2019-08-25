@@ -9,10 +9,10 @@ const NotAvailable = () => (
     <div className="custom-warning-header">
       <Link to="/">
         <img
-          src="https://static.wixstatic.com/media/375882_bfa75c6ef5e24ad3a58f4d71e3cb671c~mv2.png/v1/fill/w_142,h_33,al_c,q_80,usm_0.66_1.00_0.01/375882_bfa75c6ef5e24ad3a58f4d71e3cb671c~mv2.webp"
-          width="100"
-          height="50"
+          src="https://i.ibb.co/BTZ8LNt/2220575.png"
           alt=""
+          width="150"
+          height="100"
         />
       </Link>
     </div>

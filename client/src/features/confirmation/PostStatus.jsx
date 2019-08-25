@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import StatusConfirmation from '../../components/status';
 
@@ -16,3 +17,13 @@ const PostStatus = ({ status, message }) => (
 );
 
 export default PostStatus;
+
+PostStatus.defaultProps = {
+  status: false,
+  message: '',
+};
+
+PostStatus.propTypes = {
+  status: PropTypes.bool,
+  message: PropTypes.string,
+};

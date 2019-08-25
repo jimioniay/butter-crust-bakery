@@ -1,5 +1,6 @@
 import { POST_TRANX_CLIENT } from '../actionTypes';
 import axios from '../../api';
+import { toast } from 'react-toastify';
 
 const postTransferClient = (
   beneficary_name,
@@ -21,20 +22,25 @@ const postTransferClient = (
         account_number: account_number,
       },
     });
-    response.status
-      ? dispatch({
-          type: `${POST_TRANX_CLIENT}_SUCCESS`,
-          payload: response.data,
-        })
-      : dispatch({
-          type: `${POST_TRANX_CLIENT}_ERROR`,
-          payload: response.data,
-        });
+    if (response.status) {
+      dispatch({
+        type: `${POST_TRANX_CLIENT}_SUCCESS`,
+        payload: response.data,
+      });
+      toast.success(response.data.message);
+    } else {
+      dispatch({
+        type: `${POST_TRANX_CLIENT}_ERROR`,
+        payload: response.data,
+      });
+      toast.warn(response.data.message);
+    }
   } catch (error) {
     dispatch({
       type: `${POST_TRANX_CLIENT}_ERROR`,
       payload: error.data || error,
     });
+    toast.error(error.message);
   }
 };
 

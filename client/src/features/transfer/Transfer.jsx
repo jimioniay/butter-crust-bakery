@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import Modal from '../../components/modal';
+import DismissModal from '../../components/modal/DismissModal';
 import BaseUI from '../../features/base';
 import Header from '../../components/header';
 import BankList from './BankList';
@@ -10,7 +13,7 @@ import AccountNameField from './AccountNameField';
 import AmountField from './AmountField';
 import NarrationField from './NarrationField';
 import Confirmation from '../confirmation';
-// import AuthService from ""
+import AuthService from '../../redux/util/authServices';
 
 import postTransferClient from '../../redux/actionCreators/postTransferClient';
 
@@ -21,23 +24,40 @@ const Transfer = ({
   bank_code,
   description,
   status,
+  amountInKobo,
+  history: { push },
 }) => {
-  const [clicked, setClicked] = useState(false);
-
   useEffect(() => {
-    setClicked(status);
-  }, [status]);
+    if (!AuthService.isAuthenticated()) {
+      push('/user/signin');
+    }
+  }, []);
+
   const handleSubmit = e => {
-    postTransferClient(account_name, description, account_number, bank_code);
-    if (status) {
-      setClicked(true);
+    if (
+      account_name.length > 0 &&
+      description.length > 0 &&
+      account_number.length === 10 &&
+      bank_code.length > 0
+    ) {
+      amountInKobo >= 100
+        ? postTransferClient(
+            account_name,
+            description,
+            account_number,
+            bank_code,
+          )
+        : toast.warn('Please supply an amount greater than N0.00');
+    } else {
+      toast.warn('Please ensure all fields are supplied');
     }
   };
 
   return (
     <BaseUI>
-      {(status || clicked) && (
+      {status && (
         <Modal>
+          <DismissModal classnames="float-right" />
           <Confirmation />
         </Modal>
       )}
@@ -69,8 +89,18 @@ const mapStateToProps = ({
     selectedBank: { bank_code },
   },
   setDescriptionReducer: { description },
+  setAmountReducer: {
+    data: { amountInKobo },
+  },
   postTransferClientReducer: { status },
-}) => ({ account_number, account_name, bank_code, description, status });
+}) => ({
+  account_number,
+  account_name,
+  bank_code,
+  description,
+  status,
+  amountInKobo,
+});
 export default connect(
   mapStateToProps,
   {

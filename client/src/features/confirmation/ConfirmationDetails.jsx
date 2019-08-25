@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import postTransfer from '../../redux/actionCreators/postTransfer';
 import postTransferFinalize from '../../redux/actionCreators/postTransferFinalize';
+import Paystack from '../../components/common/Paystack';
 
 const ConfirmationDetails = ({
   account_number,
@@ -13,6 +15,8 @@ const ConfirmationDetails = ({
   description,
   postTransfer,
   status,
+  receipient_code,
+  transfer_code,
   postTransferStatus,
   postTransferFinalize,
   finalStatus,
@@ -44,17 +48,17 @@ const ConfirmationDetails = ({
   const requestBody = {
     description,
     amount: amountInKobo,
-    receipient: 'RCP_to8csrvathbziq1',
+    receipient: receipient_code,
     OTP: data.OTP,
   };
 
   const requestBodyFinalize = {
-    transfer_code: '',
+    transfer_code,
     otp: data.OTP,
   };
   return (
     <Fragment>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="mb-4">
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
             <span>Beneficiary Name: </span>
@@ -113,6 +117,14 @@ const ConfirmationDetails = ({
           Submit Transaction
         </button>
       </form>
+      <div>
+        <span
+          className="muted"
+          style={{ fontSize: '10px', fontStyle: 'italic', color: '#20303c' }}
+        >
+          powered by <Paystack />
+        </span>
+      </div>
     </Fragment>
   );
 };
@@ -128,9 +140,12 @@ const mapStateToProps = ({
     data: { formattedAmount, amountInKobo },
   },
   setDescriptionReducer: { description },
+  postTransferClientReducer: {
+    data: { receipient_code },
+  },
   postTransferReducer: {
     status,
-    data: { status: postTransferStatus },
+    data: { status: postTransferStatus, transfer_code },
   },
   postTransferFinalizeReducer: { status: finalStatus },
 }) => ({
@@ -141,6 +156,8 @@ const mapStateToProps = ({
   amountInKobo,
   description,
   status,
+  receipient_code,
+  transfer_code,
   postTransferStatus,
   finalStatus,
 });
@@ -152,3 +169,35 @@ export default connect(
     postTransferFinalize,
   },
 )(ConfirmationDetails);
+
+ConfirmationDetails.defaultProps = {
+  account_number: '',
+  account_name: '',
+  bank_name: '',
+  formattedAmount: '',
+  amountInKobo: 0,
+  description: '',
+  postTransfer: () => {},
+  status: false,
+  receipient_code: '',
+  transfer_code: '',
+  postTransferStatus: '',
+  postTransferFinalize: () => {},
+  finalStatus: false,
+};
+
+ConfirmationDetails.propTypes = {
+  account_number: PropTypes.string.isRequired,
+  account_name: PropTypes.string.isRequired,
+  bank_name: PropTypes.string.isRequired,
+  formattedAmount: PropTypes.string.isRequired,
+  amountInKobo: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  postTransfer: PropTypes.func,
+  status: PropTypes.bool.isRequired,
+  receipient_code: PropTypes.string.isRequired,
+  transfer_code: PropTypes.string.isRequired,
+  postTransferStatus: PropTypes.string.isRequired,
+  postTransferFinalize: PropTypes.func,
+  finalStatus: PropTypes.bool.isRequired,
+};
