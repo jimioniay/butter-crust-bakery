@@ -7,8 +7,12 @@ import setDescriptionReducer from './reducers/setDescriptionReducer';
 import postTransferClientReducer from './reducers/postTransferClientReducer';
 import postTransferReducer from './reducers/postTransferReducer';
 import postTransferFinalizeReducer from './reducers/postTransferFinalizeReducer';
+import loadingReducer from './reducers/loadingReducer';
+import postSignUpReducer from './reducers/postSignUpReducer';
+import postSignInReducer from './reducers/postSignInReducer';
 
 export default combineReducers({
+  loadingReducer,
   getBanksReducer,
   selectedBankReducer,
   getBeneficiaryNameReducer,
@@ -17,4 +21,6 @@ export default combineReducers({
   postTransferClientReducer,
   postTransferReducer,
   postTransferFinalizeReducer,
+  postSignUpReducer,
+  postSignInReducer,
 });

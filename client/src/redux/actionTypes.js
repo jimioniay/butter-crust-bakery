@@ -9,4 +9,7 @@ export const POST_TRANX_CLIENT = 'POST_TRANX_CLIENT';
 export const POST_TRANX = 'POST_TRANX';
 export const POST_TRANX_FINALIZE = 'POST_TRANX_FINALIZE';
 
+export const POST_SIGN_UP = 'POST_SIGN_UP';
+export const POST_SIGN_IN = 'POST_SIGN_IN';
+
 export default anon;

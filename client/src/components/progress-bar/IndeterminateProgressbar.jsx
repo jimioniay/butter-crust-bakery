@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 
 import './progress-bar.scss';
 
-const IndeterminateProgressBar = ({ spinner }) => {
-  if (spinner) {
+const IndeterminateProgressBar = ({ status }) => {
+  if (typeof status === 'object' ? status.status : status) {
     return (
       <div className="progress">
         <div className="indeterminate" />
@@ -16,8 +16,11 @@ const IndeterminateProgressBar = ({ spinner }) => {
   return null;
 };
 
-const mapStateToProps = ({ postTransferClientReducer: { spinner } }) => ({
-  spinner,
+const mapStateToProps = ({
+  postTransferClientReducer: { spinner },
+  loadingReducer: { load },
+}) => ({
+  status: spinner || load,
 });
 
 export default connect(
@@ -26,9 +29,9 @@ export default connect(
 )(IndeterminateProgressBar);
 
 IndeterminateProgressBar.defaultProps = {
-  load: false,
+  status: false,
 };
 
 IndeterminateProgressBar.propTypes = {
-  load: PropTypes.bool,
+  status: PropTypes.bool,
 };

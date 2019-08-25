@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Modal from '../../components/modal';
@@ -10,6 +10,7 @@ import AccountNameField from './AccountNameField';
 import AmountField from './AmountField';
 import NarrationField from './NarrationField';
 import Confirmation from '../confirmation';
+// import AuthService from ""
 
 import postTransferClient from '../../redux/actionCreators/postTransferClient';
 
@@ -21,14 +22,21 @@ const Transfer = ({
   description,
   status,
 }) => {
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    setClicked(status);
+  }, [status]);
   const handleSubmit = e => {
-    e.preventDefault();
     postTransferClient(account_name, description, account_number, bank_code);
+    if (status) {
+      setClicked(true);
+    }
   };
-  // const show = true;
+
   return (
     <BaseUI>
-      {status && (
+      {(status || clicked) && (
         <Modal>
           <Confirmation />
         </Modal>

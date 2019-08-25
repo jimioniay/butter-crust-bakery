@@ -27,7 +27,7 @@ const getBanksReducer = (state = initialState, action) => {
         ...state,
         spinner: false,
         status: false,
-        message: 'An error occured while fetching banks',
+        message: `An error occured while fetching banks  ${action.payload.message}`,
       };
     default:
       return state;

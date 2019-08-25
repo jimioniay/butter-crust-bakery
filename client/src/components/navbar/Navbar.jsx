@@ -9,11 +9,24 @@ const Navbar = () => (
       <Link to="/" className="navbar-brand">
         <span>
           <img
-            src="https://static.wixstatic.com/media/375882_bfa75c6ef5e24ad3a58f4d71e3cb671c~mv2.png/v1/fill/w_142,h_33,al_c,q_80,usm_0.66_1.00_0.01/375882_bfa75c6ef5e24ad3a58f4d71e3cb671c~mv2.webp"
+            src="https://i.ibb.co/BTZ8LNt/2220575.png"
             alt=""
+            width="150"
+            height="100"
           />
         </span>
       </Link>
+      <div className="d-flex justify-content-around">
+        <div className="mx-4">
+          <Link to="/auth/social">Login with Social</Link>
+        </div>
+        <div className="mx-4">
+          <Link to="/auth/signup">Sign Up</Link>
+        </div>
+        <div className="mx-4">
+          <Link to="/auth/signin">Log In</Link>
+        </div>
+      </div>
     </nav>
   </Fragment>
 );

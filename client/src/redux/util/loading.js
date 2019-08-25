@@ -1,5 +1,7 @@
-import loadingAction from 'Redux/actionCreators/loadingAction';
-
-const loading = (type, payload) => loadingAction(`${type}_LOADER`, payload);
-
+const loading = (type, status) => {
+  return {
+    type: `${type}_LOADING`,
+    status,
+  };
+};
 export default loading;
