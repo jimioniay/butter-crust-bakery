@@ -15,12 +15,17 @@ const getBanksReducer = (state = initialState, action) => {
         spinner: true,
       };
     case `${GET_BANKS}_SUCCESS`:
+      const banks = action.payload.data;
+      banks.unshift({
+        name: 'Choose...',
+        code: '',
+      });
       return {
         ...state,
         spinner: false,
         status: true,
         message: action.payload.message,
-        bankList: action.payload.data,
+        bankList: banks,
       };
     case `${GET_BANKS}_ERROR`:
       return {

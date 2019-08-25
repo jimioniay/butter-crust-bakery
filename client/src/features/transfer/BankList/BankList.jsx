@@ -30,12 +30,12 @@ const BankList = ({ getBanks, spinner, status, bankList, selectedBank }) => {
       bank_name: e.target.value.split('|')[1],
     });
   };
-  let update = status
-    ? bankList.unshift({
-        name: 'Choose...',
-        code: '',
-      })
-    : bankList;
+
+  const handleClick = e => {
+    if (bankList.length <= 1) {
+      getBanks();
+    }
+  };
   return (
     <div className="input-group mb-3">
       <div className="input-group-prepend">
@@ -47,6 +47,7 @@ const BankList = ({ getBanks, spinner, status, bankList, selectedBank }) => {
         className="custom-select"
         id="inputGroupSelect01"
         onChange={handleChange}
+        onClick={handleClick}
       >
         {status ? (
           bankList.map(item => (

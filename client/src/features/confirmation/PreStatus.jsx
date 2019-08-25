@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 const PreStatus = ({ status, message }) => (
   <Fragment>
@@ -13,3 +14,13 @@ const PreStatus = ({ status, message }) => (
 );
 
 export default PreStatus;
+
+PreStatus.defaultProps = {
+  status: false,
+  message: '',
+};
+
+PreStatus.propTypes = {
+  status: PropTypes.bool,
+  message: PropTypes.string,
+};

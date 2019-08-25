@@ -26,6 +26,7 @@ const postTransactionReducer = (state = initialState, action) => {
       };
     case `${POST_TRANX}_ERROR`:
       return {
+        ...state,
         spinner: false,
         status: false,
         message: action.payload.message,

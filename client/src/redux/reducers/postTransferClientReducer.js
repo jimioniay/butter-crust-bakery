@@ -24,6 +24,7 @@ const postTransferClientReducer = (state = initialState, action) => {
       };
     case `${POST_TRANX_CLIENT}_ERROR`:
       return {
+        ...state,
         status: false,
         spinner: false,
         message: action.payload.message,

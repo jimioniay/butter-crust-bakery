@@ -21,14 +21,14 @@ const postTransfer = ({
         OTP: OTP,
       },
     });
-    response.status
+    response.data.status
       ? dispatch({
           type: `${POST_TRANX}_SUCCESS`,
           payload: response.data,
         })
       : dispatch({
           type: `${POST_TRANX}_ERROR`,
-          payload: response,
+          payload: response.data,
         });
   } catch (error) {
     dispatch({
