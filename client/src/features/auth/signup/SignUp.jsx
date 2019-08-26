@@ -1,8 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import postSignUp from '../../../redux/actionCreators/postSignUp';
-
 import InputGroup from '../../../components/input/InputGroup';
 import Header from '../../../components/header';
 import SignUpDOM from './SignUpDOM.json';
@@ -17,6 +17,7 @@ const SignUp = ({ push, postSignUp, signUpStatus }) => {
     name: '',
     email: '',
     password: '',
+    confirmPassword: '',
   });
   const handleChange = e => {
     const { name, value } = e.target;
@@ -27,7 +28,20 @@ const SignUp = ({ push, postSignUp, signUpStatus }) => {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    postSignUp(data);
+    if (
+      data.name.length > 0 &&
+      data.email.length > 0 &&
+      data.password.length > 0 &&
+      data.confirmPassword.length > 0
+    ) {
+      if (data.password === data.confirmPassword) {
+        postSignUp(data);
+      } else {
+        toast.warn('Password and password confirmation do not match');
+      }
+    } else {
+      toast.warn('Please supply all fields');
+    }
   };
   const displayForm = SignUpDOM.map(item => (
     <Fragment key={item.name}>
