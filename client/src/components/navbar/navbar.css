@@ -1,5 +1,4 @@
 .navbar {
-  height: 100px;
   background: #2b2b52;
 }
 
@@ -11,9 +10,18 @@
   text-decoration: none;
 } */
 a {
-  color: white;
+  color: white !important;
+  font-size: 1.1em;
 }
 a:hover {
   text-decoration: none;
   color: wheat;
+}
+
+nav > button {
+  border: 1px solid white !important;
+}
+
+#navbar1 {
+  flex-grow: 0;
 }

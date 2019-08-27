@@ -6,16 +6,16 @@ import Container from '../../components/container';
 import Footer from '../../components/footer';
 
 const BaseUI = ({ children }) => (
-  <Fragment>
+  <div className="container-fluid p-0">
     <NavBar />
     <div className="row">
-      <div className="d-none d-md-block col-12 col-md-6 base-img" />
+      <div className="col-12 col-md-6 base-img" />
       <div className="col-12 col-md-6">
         <Container>{children}</Container>
       </div>
     </div>
     <Footer />
-  </Fragment>
+  </div>
 );
 
 export default BaseUI;
