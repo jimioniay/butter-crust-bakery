@@ -13,5 +13,9 @@
     "name": "password",
     "type": "password",
     "label": "Password"
+  },   {
+    "name": "confirmPassword",
+    "type": "password",
+    "label": "Confirm Password"
   }
 ]
