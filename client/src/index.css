@@ -1,0 +1,46 @@
+body {
+  font-family: helveticaneuew01-55roma, sans-serif;
+  color: white;
+  font-size: 1em;
+}
+
+.padding {
+  padding: 1.5em;
+}
+.header {
+  color: #20303c;
+  font-size: 40px;
+}
+
+.small-header {
+  color: #20303c;
+  font-size: 20px;
+}
+
+.base-img {
+  /* content: url('https://i.ibb.co/cXRw6qt/kirsten-drew-n49-Bjs-Ff5d-I-unsplash.jpg'); */
+  /* content:url("https://i.ibb.co/Gp7fBKy/5d614549d33d4.png"); */
+  content: url('https://i.ibb.co/VCWPzmT/5d6145259a0c1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0px;
+  padding: 0px;
+  /* height: 600px; */
+}
+
+#footer {
+  /* background: rgb(0, 4, 16); */
+  background: #2b2b52;
+  color: white;
+}
+
+#contact .fas,
+#contact .fab {
+  color: white;
+  font-size: 1em;
+}
+
+i {
+  color: white;
+}

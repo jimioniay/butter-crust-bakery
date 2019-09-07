@@ -1,0 +1,27 @@
+.navbar {
+  background: #2b2b52;
+}
+
+/* a > span {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  color: #707070;
+  margin-right: 1em;
+  text-decoration: none;
+} */
+a {
+  color: white !important;
+  font-size: 1.1em;
+}
+a:hover {
+  text-decoration: none;
+  color: wheat;
+}
+
+nav > button {
+  border: 1px solid white !important;
+}
+
+#navbar1 {
+  flex-grow: 0;
+}

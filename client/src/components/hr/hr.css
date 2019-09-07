@@ -1,0 +1,8 @@
+hr {
+  border-top: 3px solid #ffffff !important;
+}
+
+a > span {
+  text-decoration: none;
+  color: #dee2e6;
+}
