@@ -10,11 +10,13 @@ import Main from './Main';
 
 const App = () => (
   <Provider store={store}>
-    <IndeterminateProgressBar />
-    <BrowserRouter>
-      <Toastify />
-      <Main />
-    </BrowserRouter>
+    <div className="container">
+      <IndeterminateProgressBar />
+      <BrowserRouter>
+        <Toastify />
+        <Main />
+      </BrowserRouter>
+    </div>
   </Provider>
 );
 
